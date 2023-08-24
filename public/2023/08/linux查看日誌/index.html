@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linux查看日誌",
+  
+  "datePublished": "2023-08-15T00:00:00Z",
+  "dateModified": "2023-08-15T00:00:00Z",
+  "author": {
+    "@type": "Person",
+    "name": "C. Xi Rui",
+    
+    "image": "https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no"
+    
+  },
+  "mainEntityOfPage": { 
+    "@type": "WebPage",
+    "@id": "https:\/\/sirichiu.github.io\/2023\/08\/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C\/" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SiriC's Blog",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no"
+    }
+    
+  },
+  "description": "Linux系統查看日誌的幾種指令:\n",
+  "keywords": []
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="C. Xi Rui">
+<meta name="keywords" content="">
+<meta name="description" content="Linux系統查看日誌的幾種指令:">
+
+
+<meta property="og:description" content="Linux系統查看日誌的幾種指令:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux查看日誌">
+<meta name="twitter:title" content="Linux查看日誌">
+<meta property="og:url" content="https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/">
+<meta property="twitter:url" content="https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/">
+<meta property="og:site_name" content="SiriC&#39;s Blog">
+<meta property="og:description" content="Linux系統查看日誌的幾種指令:">
+<meta name="twitter:description" content="Linux系統查看日誌的幾種指令:">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2023-08-15T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2023-08-15T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="筆記">
+    
+  
+  
+    
+      <meta property="article:tag" content="Linux">
+    
+      <meta property="article:tag" content="Command">
+    
+      <meta property="article:tag" content="Debug">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no">
+  <meta property="twitter:image" content="https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no">
+
+
+
+
+
+
+    <title>Linux查看日誌</title>
+
+    <link rel="icon" href="https://sirichiu.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://sirichiu.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://sirichiu.github.io/" aria-label="Go to homepage">SiriC&#39;s Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://sirichiu.github.io/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://sirichiu.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">C. Xi Rui</h4>
+        
+          <h5 class="sidebar-profile-bio"><strong>醫工</strong> ✕ <strong>電子</strong> ✕ <strong>資訊</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://sirichiu.github.io/" title="首頁 Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首頁 Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://sirichiu.github.io/categories" title="分類 Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分類 Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://sirichiu.github.io/tags" title="標籤 Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">標籤 Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://sirichiu.github.io/archives" title="檔案庫 Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">檔案庫 Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://sirichiu.github.io/#about" title="關於 About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">關於 About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/siriChiu" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://linkedin.com/in/sirichiu" target="_blank" rel="noopener" title="Linkedin">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-linkedin" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Linkedin</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Linux查看日誌
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2023-08-15T00:00:00Z">
+        
+  August 15, 2023
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://sirichiu.github.io/categories/%e7%ad%86%e8%a8%98">筆記</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>Linux系統查看日誌的幾種指令:</p>
+<pre tabindex="0"><code>journalctl
+</code></pre><blockquote>
+<p><a href="https://documentation.suse.com/zh-tw/sles/15-GA/html/SLES-all/cha-journalctl.html">journalctl︰查詢 systemd 日誌 | 管理指南 | SUSE Linux Enterprise Server 15</a>
+如果需要查看上一次開機的記錄訊息，請新增一個偏移參數。下面的範例將輸出上一次開機的訊息︰
+journalctl -b -1</p>
+</blockquote>
+<pre tabindex="0"><code>dmesg
+</code></pre><blockquote>
+<p><a href="https://www.runoob.com/linux/linux-comm-dmesg.html">Linux dmesg 命令 | 菜鸟教程 (runoob.com)</a></p>
+</blockquote>
+<link rel="stylesheet" href="https://sirichiu.github.io/shortcode-timeline/timeline.css">
+<link rel="stylesheet" href="https://sirichiu.github.io/shortcode-timeline/timeline-mobile.css" media="screen and (max-width: 736px)">
+
+<div class="timeline">
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<div class="container">
+    <div class="content collapsible ">
+        <div class="title">Current position</div>
+        
+        <div class="duration"  id="duration" >
+            
+        </div>
+        
+        <div class="body"><p>I&rsquo;m working here</p>
+</div>
+    </div>
+    
+    <div class="date">
+        
+            Present
+        
+    </div>
+
+</div>
+
+
+    <script>
+        function non0plural(number, name) {
+            if (number == 0) {
+                return "";
+            }
+            return number + " " + name + (number > 1 ? "s" : "");
+        }
+
+        function monthDiff(d1, d2) {
+            let months;
+            months = (d2.getFullYear() - d1.getFullYear()) * 12;
+            months -= d1.getMonth();
+            months += d2.getMonth();
+            return months <= 0 ? 0 : months;
+        }
+
+        el = document.querySelector("#duration");
+        function refresh() {
+            const start = new Date("2021-01-01");
+            const now = new Date();
+
+            const total_months = monthDiff(start, now);
+            const months = total_months % 12;
+            const years = Math.floor((total_months) / 12);
+            el.innerHTML = non0plural(years, "year") + " " + non0plural(months, "month");
+        }
+        window.setInterval(refresh, 1*1000);
+    </script>
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<div class="container">
+    <div class="content collapsible ">
+        <div class="title">Old position</div>
+        
+        <div class="duration" >
+              1 year 
+        </div>
+        
+        <div class="body"><p>I worked here</p>
+</div>
+    </div>
+    
+    <div class="date">
+        
+            January<br>2021
+        
+    </div>
+
+</div>
+
+
+
+</div>
+
+<script>
+    
+    
+    for (const collapsible of document.getElementsByClassName("collapsible")) {
+        const content = collapsible.querySelector(".body");
+
+        function doCollapse(collapse) {
+            if (collapse) {
+                content.style.maxHeight = "0px";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        collapsible.addEventListener("click", () => {
+            
+            doCollapse(collapsible.classList.contains("collapsed"));
+            
+            window.requestAnimationFrame(() => {
+                window.requestAnimationFrame(() => {
+                    const collapsed = collapsible.classList.toggle("collapsed");
+                    doCollapse(collapsed);
+                });
+            });
+        });
+
+        
+        
+        content.addEventListener('transitionend', (transitionEvent) => {
+            if(transitionEvent.propertyName == "max-height") {
+                content.style.maxHeight = null;
+            }
+        });
+    }
+</script>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://sirichiu.github.io/tags/linux/">Linux</a>
+
+  <a class="tag tag--primary tag--small" href="https://sirichiu.github.io/tags/command/">Command</a>
+
+  <a class="tag tag--primary tag--small" href="https://sirichiu.github.io/tags/debug/">Debug</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://sirichiu.github.io/2023/08/%E6%AA%A2%E6%9F%A5nvme%E5%81%A5%E5%BA%B7%E5%BA%A6/" data-tooltip="檢查Nvme健康度" aria-label="PREVIOUS: 檢查Nvme健康度">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/sirichiu.github.io\/2023\/08\/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C\/';
+        
+          this.page.identifier = '\/2023\/08\/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'hugo-tranquilpeak-theme';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 C. Xi Rui. All Rights Reserved
+  </span>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://sirichiu.github.io/2023/08/%E6%AA%A2%E6%9F%A5nvme%E5%81%A5%E5%BA%B7%E5%BA%A6/" data-tooltip="檢查Nvme健康度" aria-label="PREVIOUS: 檢查Nvme健康度">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsirichiu.github.io%2F2023%2F08%2Flinux%25E6%259F%25A5%25E7%259C%258B%25E6%2597%25A5%25E8%25AA%258C%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fsirichiu.github.io%2F2023%2F08%2Flinux%25E6%259F%25A5%25E7%259C%258B%25E6%2597%25A5%25E8%25AA%258C%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fsirichiu.github.io%2F2023%2F08%2Flinux%25E6%259F%25A5%25E7%259C%258B%25E6%2597%25A5%25E8%25AA%258C%2F" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">C. Xi Rui</h4>
+    
+      <div id="about-card-bio"><strong>醫工</strong> ✕ <strong>電子</strong> ✕ <strong>資訊</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Sentons TEC DSP Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        台灣
+      </div>
+    
+
+
+  </div>
+</div>
+
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://sirichiu.github.io/images/bg.png');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://sirichiu.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+
