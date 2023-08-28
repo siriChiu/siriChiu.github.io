@@ -13,7 +13,7 @@
   "dateModified": "2023-08-15T00:00:00Z",
   "author": {
     "@type": "Person",
-    "name": "C. Xi Rui",
+    "name": "Siri Chiu",
     
     "image": "https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no"
     
@@ -41,7 +41,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
-<meta name="author" content="C. Xi Rui">
+<meta name="author" content="Siri Chiu">
 <meta name="keywords" content="">
 <meta name="description" content="Linux系統查看日誌的幾種指令:">
 
@@ -114,6 +114,10 @@
     <link rel="stylesheet" href="https://sirichiu.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
+      
+        <link rel="stylesheet"  href="https://sirichiu.github.io/css/_about.css">
+      
+    
 
     
       
@@ -139,6 +143,7 @@
         <img class="header-picture" src="https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no" alt="Author&#39;s picture" />
       
     
+    
     </a>
   
 </header>
@@ -150,9 +155,9 @@
         <a href="https://sirichiu.github.io/#about" aria-label="Read more about the author">
           <img class="sidebar-profile-picture" src="https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no" alt="Author&#39;s picture" />
         </a>
-        <h4 class="sidebar-profile-name">C. Xi Rui</h4>
+        <h4 class="sidebar-profile-name">Siri Chiu</h4>
         
-          <h5 class="sidebar-profile-bio"><strong>醫工</strong> ✕ <strong>電子</strong> ✕ <strong>資訊</strong></h5>
+          <h5 class="sidebar-profile-bio"><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;duration=2000&amp;pause=500&amp;color=5D686F&amp;center=true&amp;vCenter=true&amp;multiline=true&amp;width=700&amp;height=90&amp;lines=Software+Engineer;Signal+Processing+%E2%9C%95+Data+Science+%E2%9C%95+Biomedical+Ultrasound;Aikido+Trainer+%E2%9C%95+Climber" alt="Typing SVG"></a></h5>
         
       </div>
     
@@ -291,167 +296,6 @@ journalctl -b -1</p>
 </code></pre><blockquote>
 <p><a href="https://www.runoob.com/linux/linux-comm-dmesg.html">Linux dmesg 命令 | 菜鸟教程 (runoob.com)</a></p>
 </blockquote>
-<link rel="stylesheet" href="https://sirichiu.github.io/shortcode-timeline/timeline.css">
-<link rel="stylesheet" href="https://sirichiu.github.io/shortcode-timeline/timeline-mobile.css" media="screen and (max-width: 736px)">
-
-<div class="timeline">
-
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-
-<div class="container">
-    <div class="content collapsible ">
-        <div class="title">Current position</div>
-        
-        <div class="duration"  id="duration" >
-            
-        </div>
-        
-        <div class="body"><p>I&rsquo;m working here</p>
-</div>
-    </div>
-    
-    <div class="date">
-        
-            Present
-        
-    </div>
-
-</div>
-
-
-    <script>
-        function non0plural(number, name) {
-            if (number == 0) {
-                return "";
-            }
-            return number + " " + name + (number > 1 ? "s" : "");
-        }
-
-        function monthDiff(d1, d2) {
-            let months;
-            months = (d2.getFullYear() - d1.getFullYear()) * 12;
-            months -= d1.getMonth();
-            months += d2.getMonth();
-            return months <= 0 ? 0 : months;
-        }
-
-        el = document.querySelector("#duration");
-        function refresh() {
-            const start = new Date("2021-01-01");
-            const now = new Date();
-
-            const total_months = monthDiff(start, now);
-            const months = total_months % 12;
-            const years = Math.floor((total_months) / 12);
-            el.innerHTML = non0plural(years, "year") + " " + non0plural(months, "month");
-        }
-        window.setInterval(refresh, 1*1000);
-    </script>
-
-
-
-
-
-
-    
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-
-<div class="container">
-    <div class="content collapsible ">
-        <div class="title">Old position</div>
-        
-        <div class="duration" >
-              1 year 
-        </div>
-        
-        <div class="body"><p>I worked here</p>
-</div>
-    </div>
-    
-    <div class="date">
-        
-            January<br>2021
-        
-    </div>
-
-</div>
-
-
-
-</div>
-
-<script>
-    
-    
-    for (const collapsible of document.getElementsByClassName("collapsible")) {
-        const content = collapsible.querySelector(".body");
-
-        function doCollapse(collapse) {
-            if (collapse) {
-                content.style.maxHeight = "0px";
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        }
-
-        collapsible.addEventListener("click", () => {
-            
-            doCollapse(collapsible.classList.contains("collapsed"));
-            
-            window.requestAnimationFrame(() => {
-                window.requestAnimationFrame(() => {
-                    const collapsed = collapsible.classList.toggle("collapsed");
-                    doCollapse(collapsed);
-                });
-            });
-        });
-
-        
-        
-        content.addEventListener('transitionend', (transitionEvent) => {
-            if(transitionEvent.propertyName == "max-height") {
-                content.style.maxHeight = null;
-            }
-        });
-    }
-</script>
               
 
 
@@ -576,7 +420,7 @@ journalctl -b -1</p>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 C. Xi Rui. All Rights Reserved
+    &copy; 2023 Siri Chiu. All Rights Reserved
   </span>
 </footer>
 <script type="text/javascript"
@@ -692,15 +536,15 @@ journalctl -b -1</p>
     
       <img id="about-card-picture" src="https://lh3.googleusercontent.com/a-/AOh14GgqSMkrhYfE6qcVmLwDKIyLqiCCcH7oZBlzEfcT=s360-p-rw-no" alt="Author&#39;s picture" />
     
-    <h4 id="about-card-name">C. Xi Rui</h4>
+    <h4 id="about-card-name">Siri Chiu</h4>
     
-      <div id="about-card-bio"><strong>醫工</strong> ✕ <strong>電子</strong> ✕ <strong>資訊</strong></div>
+      <div id="about-card-bio"><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;duration=2000&amp;pause=500&amp;color=5D686F&amp;center=true&amp;vCenter=true&amp;multiline=true&amp;width=700&amp;height=90&amp;lines=Software+Engineer;Signal+Processing+%E2%9C%95+Data+Science+%E2%9C%95+Biomedical+Ultrasound;Aikido+Trainer+%E2%9C%95+Climber" alt="Typing SVG"></a></div>
     
     
       <div id="about-card-job">
         <i class="fa fa-briefcase"></i>
         <br/>
-        Sentons TEC DSP Engineer
+        Advantech - Software Engineer
       </div>
     
     
@@ -710,7 +554,319 @@ journalctl -b -1</p>
         台灣
       </div>
     
+    
+    
+    <div id="about-card-me"><h3 id="-關於我">👨🏻‍💻 關於我</h3>
+<link rel="stylesheet" href="https://sirichiu.github.io/scss/columns.min.18c50b8fac2bf86b76380613174d71cd459126d4199eb589efae525350dbb5da.css">
+<div class="md-columns">
+<div class="markdown-inner">
+<p>💻 從小開始接觸程式語言，對程式開發非常有熱誠<br>
+🔭 專題經驗豐富，約10個以上的專題，實作能力強<br>
+🌱 對學習充滿熱忱、喜歡接受挑戰<br>
+🌟 超音波訊號分析、演算法設計、軟韌體設計、深度機器學習<br>
+🚀 資訊科→電子工程系→醫學工程所，富有跨領域知識<br>
+🥋 持續8年合氣道訓練，能長期不懈的專注一項事情</p>
+</div>
+<div class="markdown-inner">
+<div style="text-align: center;">
+    <img src="https://sirichiu.github.io/images/programmer.gif" alt="" width="300px">
+</div>
+</div>
+</div>
+<p><a href="https://linkedin.com/in/sirichiu"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&amp;style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn"></a></p>
+<hr>
+<h3 id="-經歷">💼 經歷</h3>
+<link rel="stylesheet" href="https://sirichiu.github.io/shortcode-timeline/timeline.css">
+<link rel="stylesheet" href="https://sirichiu.github.io/shortcode-timeline/timeline-mobile.css" media="screen and (max-width: 736px)">
 
+<div class="timeline">
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<div class="container">
+    <div class="content collapsible ">
+        <div class="title">研華科技 Advantech - 軟體工程師</div>
+        
+        <div class="duration"  id="duration" >
+            
+        </div>
+        
+        <div class="body"><h6 id="伺服器燒機burn-in自動化測試工具">伺服器燒機(Burn-in)自動化測試工具:</h6>
+<ul>
+<li>演算法開發、對數據進行預測與分析</li>
+<li>即時同步感測器數據至儀錶板</li>
+<li>Web介面開發、一對多主機同步控制</li>
+</ul>
+<h6 id="基於openaigitea自動化代碼審查工具">基於OpenAI，Gitea自動化代碼審查工具:</h6>
+<ul>
+<li>以Drone CI與Gitea webhook建立觸發事件</li>
+<li>透過Restful API與OpenAI API，對欲校閱的代碼進行審查</li>
+</ul>
+<p><a href="https://sirichiu.github.io/tags/golang">#Golang</a>
+,
+<a href="https://sirichiu.github.io/tags/python">#Python</a>
+,
+<a href="https://sirichiu.github.io/tags/dl/ml">#DL/ML</a>
+,
+<a href="https://sirichiu.github.io/tags/algorithm">#Algorithm</a>
+,
+<a href="https://sirichiu.github.io/tags/dashboard">#Dashboard</a>
+,
+<a href="https://sirichiu.github.io/tags/docker">#Docker</a>
+.</p>
+</div>
+    </div>
+    
+    <div class="date">
+        
+            Present
+        
+    </div>
+
+</div>
+
+
+    <script>
+        function non0plural(number, name) {
+            if (number == 0) {
+                return "";
+            }
+            return number + " " + name + (number > 1 ? "s" : "");
+        }
+
+        function monthDiff(d1, d2) {
+            let months;
+            months = (d2.getFullYear() - d1.getFullYear()) * 12;
+            months -= d1.getMonth();
+            months += d2.getMonth();
+            return months <= 0 ? 0 : months;
+        }
+
+        el = document.querySelector("#duration");
+        function refresh() {
+            const start = new Date("2022-11-01");
+            const now = new Date();
+
+            const total_months = monthDiff(start, now);
+            const months = total_months % 12;
+            const years = Math.floor((total_months) / 12);
+            el.innerHTML = non0plural(years, "year") + " " + non0plural(months, "month");
+        }
+        window.setInterval(refresh, 1*1000);
+    </script>
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<div class="container">
+    <div class="content collapsible collapsed">
+        <div class="title">香港商顯通科技 Sentons - 數位訊號處理工程師</div>
+        
+        <div class="duration" >
+              1 year 
+        </div>
+        
+        <div class="body"><h6 id="訊號分析及處理">訊號分析及處理</h6>
+<ul>
+<li>使用MATLAB進行超音波訊號的模擬以及觸碰演算法研究</li>
+<li>※為提出提高工廠生產良率的訊號處理方式</li>
+</ul>
+<h6 id="韌體設計">韌體設計</h6>
+<ul>
+<li>C++韌體開發，將模擬後之最佳效能的參數實作整合至韌體中</li>
+<li>※訊號參數調適最佳化演算法開發</li>
+</ul>
+<h6 id="軟體設計">軟體設計</h6>
+<ul>
+<li>C# GUI程式開發，整合超音波訊號與產品裝置間的訊號溝通即顯示介面</li>
+<li>※開發產品之軟體開發套件(SDK)、簡單化複雜的超音波訊號韌體參數設定步驟</li>
+</ul>
+<h6 id="其他">其他</h6>
+<ul>
+<li>依據客戶需求，設計出對方所希望的軟體韌體功能</li>
+<li>協助客戶開發及量產問題、客戶技術支援、專案協調</li>
+<li>與美國成員、主管進行書信及會議</li>
+</ul>
+<p><a href="https://sirichiu.github.io/tags/c&#43;&#43;">#C++</a>
+,
+<a href="https://sirichiu.github.io/tags/c">#C#</a>
+,
+<a href="https://sirichiu.github.io/tags/matlab">#MATLAB</a>
+,
+<a href="https://sirichiu.github.io/tags/git">#Git</a>
+,
+<a href="https://sirichiu.github.io/tags/%E9%9F%8C%E9%AB%94%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88">#韌體程式設計</a>
+,
+<a href="https://sirichiu.github.io/tags/%E8%BB%9F%E9%AB%94%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88">#軟體程式設計</a>
+.</p>
+</div>
+    </div>
+    
+    <div class="date">
+        
+            September<br>2022
+        
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<div class="container">
+    <div class="content collapsible collapsed">
+        <div class="title">成功大學 NCKU 生物醫學工程研究所 - 碩士</div>
+        
+        <div class="duration" >
+              2 years 
+        </div>
+        
+        <div class="body"><h6 id="畢業論文">畢業論文</h6>
+<p>透過高頻超快速超音波曲線結構增強血流成像對手指肌腱新生血管評估<br>
+<a href="https://sirichiu.github.io/2022/04/high-frequency-ultrafast-ultrasound-micro-doppler-imaging-for-estimating-finger-tendon-neovascularity-based-on-curvilinear-structure-enhancement/">Estimating the Neovascularity of Human Finger Tendon Through High-Frequency Ultrasound Micro-Doppler Imaging</a></p>
+<p><a href="https://sirichiu.github.io/tags/block-wise-svd-filter">#Block-wise SVD filter</a>
+,
+<a href="https://sirichiu.github.io/tags/bowler-hat-transform">#Bowler-hat transform</a>
+,
+<a href="https://sirichiu.github.io/tags/hessian-based-vesslness">#Hessian-based vesslness</a></p>
+<h6 id="2020-ieee-international-ultrasonics-symposium-國際研討會期刊發表">2020 IEEE International Ultrasonics Symposium 國際研討會期刊發表</h6>
+<p>透過高頻超快速超音波像量都卜勒實現小鼠左心室心肌應變成像</p>
+<p><a href="https://sirichiu.github.io/tags/vector-doppler">#Vector Doppler</a>
+,
+<a href="https://sirichiu.github.io/tags/svd-filter">#SVD filter</a>
+,
+<a href="https://sirichiu.github.io/tags/motion-tracking-algorithm">#Motion tracking algorithm</a></p>
+<h6 id="projectile-vector-doppler-imaginghttpssirichiugithubio202204projectile-vector-doppler-imaging"><a href="https://sirichiu.github.io/2022/04/projectile-vector-doppler-imaging/">Projectile Vector Doppler Imaging</a></h6>
+</div>
+    </div>
+    
+    <div class="date">
+        
+            September<br>2021
+        
+    </div>
+
+</div>
+
+
+</div>
+
+<script>
+    
+    
+    for (const collapsible of document.getElementsByClassName("collapsible")) {
+        const content = collapsible.querySelector(".body");
+
+        function doCollapse(collapse) {
+            if (collapse) {
+                content.style.maxHeight = "0px";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        collapsible.addEventListener("click", () => {
+            
+            doCollapse(collapsible.classList.contains("collapsed"));
+            
+            window.requestAnimationFrame(() => {
+                window.requestAnimationFrame(() => {
+                    const collapsed = collapsible.classList.toggle("collapsed");
+                    doCollapse(collapsed);
+                });
+            });
+        });
+
+        
+        
+        content.addEventListener('transitionend', (transitionEvent) => {
+            if(transitionEvent.propertyName == "max-height") {
+                content.style.maxHeight = null;
+            }
+        });
+    }
+</script>
+
+<hr>
+<h3 id="-dashboard">📊 Dashboard</h3>
+<p><a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&amp;logo=Streamlit&amp;logoColor=white" alt="Streamlit"></a> <a href="https://grafana.com/"><img src="https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&amp;logo=grafana&amp;logoColor=white" alt="Grafana"></a></p>
+<h3 id="-語言">📋 語言</h3>
+<p><img src="https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&amp;logo=go&amp;logoColor=white" alt="Go"> <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&amp;logo=python&amp;logoColor=ffdd54" alt="Python"> <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&amp;logo=c%2B%2B&amp;logoColor=white" alt="C++"> <img src="https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&amp;logo=c-sharp&amp;logoColor=white" alt="C#"> <img src="https://img.shields.io/badge/matlab-red.svg?style=for-the-badge&amp;logo=matlab&amp;logoColor=white" alt="MATLAB"></p>
+<h3 id="-版本控制">🕓 版本控制</h3>
+<p><img src="https://img.shields.io/badge/Gitea-34495E?style=for-the-badge&amp;logo=gitea&amp;logoColor=5D9425" alt="Gitea"> <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="GitHub"></p>
+<h3 id="-開發工具">💻 開發工具</h3>
+<p><img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&amp;logo=visual-studio-code&amp;logoColor=white" alt="Visual Studio Code"> <img src="https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&amp;logo=visual-studio&amp;logoColor=white" alt="Visual Studio"> <img src="https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&amp;logo=jupyter&amp;logoColor=white" alt="Jupyter Notebook"></p>
+<h3 id="-mldl">🖥️ ML/DL</h3>
+<p><img src="https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&amp;logo=anaconda&amp;logoColor=white" alt="Anaconda"> <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&amp;logo=PyTorch&amp;logoColor=white" alt="PyTorch"> <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&amp;logo=scikit-learn&amp;logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&amp;logo=TensorFlow&amp;logoColor=white" alt="TensorFlow"></p>
+<h3 id="-作業系統">🎛️ 作業系統</h3>
+<p><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black" alt="Linux"> <img src="https://img.shields.io/badge/cent%20os-002260?style=for-the-badge&amp;logo=centos&amp;logoColor=F0F0F0" alt="Cent OS"> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&amp;logo=ubuntu&amp;logoColor=white" alt="Ubuntu"> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white" alt="Windows"> <img src="https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&amp;logo=Raspberry-Pi" alt="Raspberry Pi"></p>
+</div>
+    
 
   </div>
 </div>

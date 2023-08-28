@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on SiriC&#39;s Blog</title>
+    <link>https://sirichiu.github.io/posts/</link>
+    <description>Recent content in Posts on SiriC&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>sirichiu8632@gmail.com (Siri Chiu)</managingEditor>
+    <webMaster>sirichiu8632@gmail.com (Siri Chiu)</webMaster>
+    <lastBuildDate>Tue, 15 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sirichiu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux查看日誌</title>
+      <link>https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      <author>sirichiu8632@gmail.com (Siri Chiu)</author>
+      <guid>https://sirichiu.github.io/2023/08/linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E8%AA%8C/</guid>
+      <description>&lt;p&gt;Linux系統查看日誌的幾種指令:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>檢查Nvme健康度</title>
+      <link>https://sirichiu.github.io/2023/08/%E6%AA%A2%E6%9F%A5nvme%E5%81%A5%E5%BA%B7%E5%BA%A6/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      <author>sirichiu8632@gmail.com (Siri Chiu)</author>
+      <guid>https://sirichiu.github.io/2023/08/%E6%AA%A2%E6%9F%A5nvme%E5%81%A5%E5%BA%B7%E5%BA%A6/</guid>
+      <description>&lt;p&gt;檢查Nvme健康度的兩種指令:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>High-frequency ultrafast ultrasound micro-Doppler imaging for estimating finger tendon neovascularity based on curvilinear structure enhancement</title>
+      <link>https://sirichiu.github.io/2022/04/high-frequency-ultrafast-ultrasound-micro-doppler-imaging-for-estimating-finger-tendon-neovascularity-based-on-curvilinear-structure-enhancement/</link>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
+      <author>sirichiu8632@gmail.com (Siri Chiu)</author>
+      <guid>https://sirichiu.github.io/2022/04/high-frequency-ultrafast-ultrasound-micro-doppler-imaging-for-estimating-finger-tendon-neovascularity-based-on-curvilinear-structure-enhancement/</guid>
+      <description>&lt;p&gt;我提出一種微血管成像演算法，能夠清楚的看見老鼠腎臟的血管樹狀結構以及手指受傷肌腱的新生血管資訊，最高解析度可達直徑35um。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Projectile Vector Doppler Imaging</title>
+      <link>https://sirichiu.github.io/2022/04/projectile-vector-doppler-imaging/</link>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+      <author>sirichiu8632@gmail.com (Siri Chiu)</author>
+      <guid>https://sirichiu.github.io/2022/04/projectile-vector-doppler-imaging/</guid>
+      <description>&lt;script type=&#34;text/javascript&#34;
+  src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt;
+&lt;/script&gt;
+&lt;p&gt;動態向量都卜勒(Projectile Vector Doppler Imaging) 比傳統都卜勒影像提供更多樣的血液資訊，如流速、流動，擾流情況等，給予醫師更多診斷資訊。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Evaluation of hand tendon movement</title>
+      <link>https://sirichiu.github.io/2022/04/evaluation-of-hand-tendon-movement/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      <author>sirichiu8632@gmail.com (Siri Chiu)</author>
+      <guid>https://sirichiu.github.io/2022/04/evaluation-of-hand-tendon-movement/</guid>
+      <description>&lt;p&gt;向量都卜勒成像(Vector Doppler Imaging)能夠觀測更多的目標運動變化，除了應用在血液流速的估算外，也可以應用在肌腱上評估肌腱的滑動性，進而提供肌腱的位移資訊給予醫師更多評估的信息。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>物聯網溫溼度感測器即時監控系統</title>
+      <link>https://sirichiu.github.io/2022/04/%E7%89%A9%E8%81%AF%E7%B6%B2%E6%BA%AB%E6%BA%BC%E5%BA%A6%E6%84%9F%E6%B8%AC%E5%99%A8%E5%8D%B3%E6%99%82%E7%9B%A3%E6%8E%A7%E7%B3%BB%E7%B5%B1/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      <author>sirichiu8632@gmail.com (Siri Chiu)</author>
+      <guid>https://sirichiu.github.io/2022/04/%E7%89%A9%E8%81%AF%E7%B6%B2%E6%BA%AB%E6%BA%BC%E5%BA%A6%E6%84%9F%E6%B8%AC%E5%99%A8%E5%8D%B3%E6%99%82%E7%9B%A3%E6%8E%A7%E7%B3%BB%E7%B5%B1/</guid>
+      <description>&lt;p&gt;使用MQTT傳輸協定為基礎，透過Raspberry Pi、NodeMCU等裝置來實現基本的物聯網遠端即時監控系統&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>長照2.0服務整合平台</title>
+      <link>https://sirichiu.github.io/2022/04/%E9%95%B7%E7%85%A72.0%E6%9C%8D%E5%8B%99%E6%95%B4%E5%90%88%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      <author>sirichiu8632@gmail.com (Siri Chiu)</author>
+      <guid>https://sirichiu.github.io/2022/04/%E9%95%B7%E7%85%A72.0%E6%9C%8D%E5%8B%99%E6%95%B4%E5%90%88%E5%B9%B3%E5%8F%B0/</guid>
+      <description>&lt;p&gt;為了改善台灣長照環境所設計的長照服務整合平台。
+此專題的理念是將長照環境搬進家中，減少家中子女負擔。
+透過設計便捷的APP呼叫方式，以便年長者自行操作系統。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

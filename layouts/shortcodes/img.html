@@ -1,0 +1,9 @@
+<!-- layouts/shortcodes/image.html -->
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $width := .Get "width" }}
+{{ $align := .Get "align" | default "center" }}
+
+<div style="text-align: {{ $align }};">
+    <img src="{{ $src }}" alt="{{ $alt }}" {{ with $width }}width="{{ $width }}"{{ end }}>
+</div>
