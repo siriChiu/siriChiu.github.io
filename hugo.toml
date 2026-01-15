@@ -21,7 +21,8 @@ theme = ["hugo-tranquilpeak-theme", "hugo-shortcode-timeline"]
 
 disqusShortname = "hugo-tranquilpeak-theme"
 # googleAnalytics = "UA-123-45"
-paginate = 7
+[pagination]
+  pagerSize = 7
 canonifyurls = true
 
 [permalinks]

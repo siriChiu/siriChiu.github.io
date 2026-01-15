@@ -65,14 +65,14 @@ date = 2023-08-17
 {{% event title="成功大學 NCKU 生物醫學工程研究所 - 碩士" from="2019-09-01" to="2021-09-01" collapsed=true %}}
 ###### 畢業論文
 透過高頻超快速超音波曲線結構增強血流成像對手指肌腱新生血管評估\
-[Estimating the Neovascularity of Human Finger Tendon Through High-Frequency Ultrasound Micro-Doppler Imaging]({{< ref "/content/posts/High-frequency ultrafast ultrasound micro-Doppler.md" >}})
+[Estimating the Neovascularity of Human Finger Tendon Through High-Frequency Ultrasound Micro-Doppler Imaging]({{< ref "posts/High-frequency ultrafast ultrasound micro-Doppler.md" >}})
 {{< hashtag "Block-wise SVD filter" >}}, {{< hashtag "Bowler-hat transform" >}}, {{< hashtag "Hessian-based vesslness" >}}
 
 ###### 2020 IEEE International Ultrasonics Symposium 國際研討會期刊發表
 透過高頻超快速超音波像量都卜勒實現小鼠左心室心肌應變成像
 {{< hashtag "Vector Doppler" >}}, {{< hashtag "SVD filter" >}}, {{< hashtag "Motion tracking algorithm" >}}
 
-###### [Projectile Vector Doppler Imaging]({{< ref "/content/posts/Projectile Vector Doppler Imaging.md" >}})
+###### [Projectile Vector Doppler Imaging]({{< ref "posts/Projectile Vector Doppler Imaging.md" >}})
 
 {{% /event %}}
 {{< /timeline >}}
