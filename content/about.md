@@ -5,20 +5,20 @@ date = 2023-08-17
 
 ### 👨🏻‍💻 關於我
 
-{{% columns %}}
+{{< columns >}}
 
-💻 從小開始接觸程式語言，對程式開發非常有熱誠\
-🔭 專題經驗豐富，約10個以上的專題，實作能力強\
+💻 對程式開發富有熱誠，專題經驗豐富(約10個以上)，實作能力強\
 🌱 對學習充滿熱忱、喜歡接受挑戰\
-🌟 超音波訊號分析、演算法設計、軟韌體設計、深度機器學習\
-🚀 資訊科→電子工程系→醫學工程所，富有跨領域知識\
-🥋 持續8年合氣道訓練，能長期不懈的專注一項事情
+🌟 自動化系統獨立開發、超音波訊號分析、演算法研發、軟韌體設計、深度機器學習與應用\
+🚀 電子工程系→醫學工程所，富有跨領域知識\
+🌍 具備跨國會議與外國人交流經驗，英文商務溝通流利\
+🥋 持續10年的國內外合氣道訓練，能長期不懈的專注一項事情，也樂於與人交流
 
 <--->
 
 {{< img src="/images/programmer.gif"  width="300px" align="center"  >}}
 
-{{% /columns %}}
+{{< /columns >}}
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/sirichiu)
 
@@ -26,7 +26,7 @@ date = 2023-08-17
 ### 💼 經歷
 {{< timeline >}}
 
-{{% event title="研華科技 Advantech - 軟體工程師" from="2022-11-01" %}}
+{{< event title="研華科技 Advantech - 軟體工程師" from="2022-11-01" >}}
 ###### 伺服器燒機(Burn-in)自動化測試工具:
 - 演算法開發、對數據進行預測與分析
 - 即時同步感測器數據至儀錶板
@@ -38,9 +38,9 @@ date = 2023-08-17
 
 {{< hashtag "Golang" >}}, {{< hashtag "Python" >}}, {{< hashtag "DL/ML" >}}, {{< hashtag "Algorithm" >}}, {{< hashtag "Dashboard" >}}, {{< hashtag "Docker" >}}.
 
-{{% /event %}}
+{{< /event >}}
 
-{{% event title="香港商顯通科技 Sentons - 數位訊號處理工程師" from="2021-09-01" to="2022-09-02" collapsed=true %}}
+{{< event title="香港商顯通科技 Sentons - 數位訊號處理工程師" from="2021-09-01" to="2022-09-02" collapsed=true >}}
 ###### 訊號分析及處理
 - 使用MATLAB進行超音波訊號的模擬以及觸碰演算法研究
 - ※為提出提高工廠生產良率的訊號處理方式
@@ -60,9 +60,9 @@ date = 2023-08-17
 - 與美國成員、主管進行書信及會議
 
 {{< hashtag "C++" >}}, {{< hashtag "C#" >}}, {{< hashtag "MATLAB" >}}, {{< hashtag "Git" >}}, {{< hashtag "韌體程式設計" >}}, {{< hashtag "軟體程式設計" >}}.
-{{% /event %}}
+{{< /event >}}
 
-{{% event title="成功大學 NCKU 生物醫學工程研究所 - 碩士" from="2019-09-01" to="2021-09-01" collapsed=true %}}
+{{< event title="成功大學 NCKU 生物醫學工程研究所 - 碩士" from="2019-09-01" to="2021-09-01" collapsed=true >}}
 ###### 畢業論文
 透過高頻超快速超音波曲線結構增強血流成像對手指肌腱新生血管評估\
 [Estimating the Neovascularity of Human Finger Tendon Through High-Frequency Ultrasound Micro-Doppler Imaging]({{< ref "posts/High-frequency ultrafast ultrasound micro-Doppler.md" >}})
@@ -74,7 +74,7 @@ date = 2023-08-17
 
 ###### [Projectile Vector Doppler Imaging]({{< ref "posts/Projectile Vector Doppler Imaging.md" >}})
 
-{{% /event %}}
+{{< /event >}}
 {{< /timeline >}}
 
 ---

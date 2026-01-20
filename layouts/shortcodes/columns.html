@@ -4,7 +4,7 @@
 <div class="md-columns">
     {{ range split .Inner "<--->" }}
         {{ printf "<div class=\"markdown-inner\">" | htmlUnescape | safeHTML }}
-            {{ . | safeHTML }}
+            {{ . | markdownify }}
             {{ printf "</div>" | htmlUnescape | safeHTML }}
         {{ end }}
 </div>

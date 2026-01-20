@@ -19,40 +19,49 @@
 {{if gt $months 0 }}{{$duration = printf "%s %d %s" $duration $months $monthStr}}{{end}}
 {{end}}
 
+{{$collapsed := .Get "collapsed"}}
+{{$collapsedClass := ""}}
+{{if $collapsed}}{{$collapsedClass = "collapsed"}}{{end}}
+
 <div class="container">
-    <div class="content">
-        <div class="title">{{.Get "title"}}</div>
-        {{if $enabledTime }}
-        <div class="moment" {{ if eq .Ordinal 0 }} id="moment" {{ end }}>
-            {{ if ne .Ordinal 0 }} {{$duration}} {{ end }}
-        </div>
-        {{ end }}
-        <div class="body">{{.Inner}}</div>
-    </div>
-    <div class="date">{{$to.Year}}</div>
+<div class="content collapsible {{$collapsedClass}}">
+<div class="title">{{.Get "title"}}</div>
+{{if $enabledTime }}
+<div class="duration" {{ if eq .Ordinal 0 }} id="duration" {{ end }}>
+{{ if ne .Ordinal 0 }} {{$duration}} {{ end }}
+</div>
+{{ end }}
+<div class="body">{{.Inner | markdownify}}</div>
+</div>
+<div class="date">{{ if eq (.Get "to") "" }}Present{{ else }}{{ $to.Format "January" }}<br>{{ $to.Year }}{{ end }}</div>
 </div>
 {{ if and (eq (.Ordinal) 0) $enabledTime }}
 <script>
-    function non0plural(number, name) {
-        if (number == 0) {
-            return ""
-        }
-        if (number > 1) {
-            return number + " " + name + "s"
-        }
-        return number + " " + name
-    }
+function non0plural(number, name) {
+if (number == 0) {
+return ""
+}
+if (number > 1) {
+return number + " " + name + "s"
+}
+return number + " " +name
+}
 
-    el = document.querySelector("#moment");
-    function refresh() {
-        start = dayjs({{.Get "from"}})
-    now = dayjs()
+el = document.querySelector("#duration");
+function refresh() {
+const t = new Date({{.Get "from"}}),
+n = new Date,
+e = monthDiff(t, n),
+s = e % 12,
+o = Math.floor(e / 12);
+el.innerHTML = non0plural(o, "year") + " " + non0plural(s, "month")
+}
 
-    total_months = now.diff(start, "M", true)
-    months = total_months % 12
-    years = Math.floor((total_months) / 12)
-    el.innerHTML = non0plural(years, "year") + " " + non0plural(months.toFixed(8), "month")
-  }
-    window.setInterval(refresh, 100);
+function monthDiff(e, t) {
+let n;
+return n = (t.getFullYear() - e.getFullYear()) * 12, n -= e.getMonth(), n += t.getMonth(), n <= 0 ? 0 : n
+}
+
+window.setInterval(refresh, 1 * 1e3);
 </script>
 {{ end }}

@@ -1,1 +1,22 @@
+<link rel="stylesheet" href="/shortcode-timeline/timeline.css">
+<link rel="stylesheet" href="/shortcode-timeline/timeline-mobile.css" media="screen and (max-width: 736px)">
 <div class="timeline">{{ .Inner }}</div>
+<script>
+// Collapse functionality for all timeline items
+for (const t of document.getElementsByClassName("collapsible")) {
+  const e = t.querySelector(".body");
+  function doCollapse(t) {
+    t ? e.style.maxHeight = "0px" : e.style.maxHeight = e.scrollHeight + "px"
+  }
+  t.addEventListener("click", () => {
+    doCollapse(t.classList.contains("collapsed")), window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        const e = t.classList.toggle("collapsed");
+        doCollapse(e)
+      })
+    })
+  }), e.addEventListener("transitionend", t => {
+    t.propertyName == "max-height" && (e.style.maxHeight = null)
+  })
+}
+</script>

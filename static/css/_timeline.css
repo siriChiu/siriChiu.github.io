@@ -80,9 +80,9 @@ timeline
 
 /* card title format */
 .timeline .content .title {
-  padding: 5px 30px;
+  padding: 5px 150px 5px 30px;
   font-weight: bold;
-  display: inline-block;
+  display: block;
 }
 
 /* time moment format*/
@@ -90,9 +90,10 @@ timeline
   color: #c41a16;
   text-align: right;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
   padding: 5px;
+  font-size: 14px;
 }
 
 /* body size */
@@ -122,4 +123,8 @@ timeline
   .timeline .content .moment {
     position: relative;
   }
+}
+/* Collapsed state */
+.timeline .container.collapsed .body {
+  display: none;
 }
