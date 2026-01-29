@@ -253,6 +253,8 @@ canonifyurls = true
   # they have to be referred from static root. Example
    [[params.customCSS]]
      href = "css/_about.css"
+   [[params.customCSS]]
+     href = "css/modern-layout.css"
 
   # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
   # they have to be referred from static root. Example

@@ -1,0 +1,168 @@
+{{ partial "head.html" . }}
+  <body>
+    <div id="blog">
+      {{ partial "header.html" . }}
+      {{ partial "sidebar.html" . }}
+      {{ partial "post/header-cover.html" . }}
+      <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}"
+        class="{{ with .Params.coverimage }}hasCover{{ end }}
+               {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
+               {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
+        
+        <section class="main-content-wrap glass-portfolio">
+          
+          <!-- Define your category order here -->
+          {{- $categoryOrder := slice "專業技術" "研究所論文" "研究生專題"  "大學生專題"}}
+          
+          <!-- Filter Bar -->
+          <div class="glass-filter-bar">
+            <div class="filter-tabs">
+              <button class="filter-tab active" data-filter="all">All</button>
+              {{- range $catName := $categoryOrder }}
+                {{- if index $.Site.Taxonomies.categories $catName }}
+              <button class="filter-tab" data-filter="{{ $catName | urlize }}">{{ $catName }}</button>
+                {{- end }}
+              {{- end }}
+            </div>
+            <div class="filter-dropdown">
+              <select id="year-filter" class="year-select">
+                <option value="all">All Years</option>
+                {{- $years := slice }}
+                {{- range (where .Site.RegularPages "Type" "in" site.Params.mainSections) }}
+                  {{- $year := .Date.Format "2006" }}
+                  {{- if not (in $years $year) }}
+                    {{- $years = $years | append $year }}
+                  {{- end }}
+                {{- end }}
+                {{- range (sort $years "value" "desc") }}
+                <option value="{{ . }}">{{ . }}</option>
+                {{- end }}
+              </select>
+            </div>
+          </div>
+
+          <!-- Posts grouped by Category (same order as tabs) -->
+          <div class="portfolio-content">
+            {{- range $catName := $categoryOrder }}
+              {{- $pages := index $.Site.Taxonomies.categories $catName }}
+              {{- if $pages }}
+            <div class="category-section" data-category="{{ $catName | urlize }}">
+              <h2 class="category-title">{{ $catName }}</h2>
+              <div class="cards-container">
+                {{- range $pages.Pages }}
+                <article class="glass-card" 
+                         data-category="{{ $catName | urlize }}" 
+                         data-year="{{ .Date.Format "2006" }}">
+                  
+                  {{- $thumbnailImage := "" }}
+                  {{- if .Params.thumbnailImage }}
+                    {{- $thumbnailImage = .Params.thumbnailImage }}
+                  {{- else if .Params.coverImage }}
+                    {{- $thumbnailImage = .Params.coverImage }}
+                  {{- end }}
+                  
+                  {{- if $thumbnailImage }}
+                  <a href="{{ .Permalink }}" class="card-image-link">
+                    <div class="card-image">
+                      <img alt="{{ .Title }}" src="{{ $thumbnailImage }}" loading="lazy"/>
+                    </div>
+                  </a>
+                  {{- end }}
+                  
+                  <div class="card-content">
+                    <div class="card-header">
+                      <h3 class="card-title">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                      </h3>
+                      <time class="card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2006" }}</time>
+                    </div>
+                    
+                    <p class="card-description">
+                      {{- if .Params.Summary }}
+                        {{ .Params.Summary | markdownify | truncate 200 }}
+                      {{- else }}
+                        {{ .Summary | truncate 200 }}
+                      {{- end }}
+                    </p>
+                    
+                    {{- with .Params.tags }}
+                    <div class="card-tags">
+                      {{- range first 5 . }}
+                      <span class="tag-pill">#{{ . }}</span>
+                      {{- end }}
+                    </div>
+                    {{- end }}
+                  </div>
+                </article>
+                {{- end }}
+              </div>
+            </div>
+              {{- end }}
+            {{- end }}
+          </div>
+          
+        </section>
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+
+    <!-- Filter JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const yearSelect = document.getElementById('year-filter');
+      const cards = document.querySelectorAll('.glass-card');
+      const sections = document.querySelectorAll('.category-section');
+      
+      function filterContent() {
+        const activeTab = document.querySelector('.filter-tab.active');
+        const categoryFilter = activeTab ? activeTab.dataset.filter : 'all';
+        const yearFilter = yearSelect ? yearSelect.value : 'all';
+        
+        // Filter cards
+        cards.forEach(card => {
+          const cardCategory = card.dataset.category;
+          const cardYear = card.dataset.year;
+          
+          const matchCategory = categoryFilter === 'all' || cardCategory === categoryFilter;
+          const matchYear = yearFilter === 'all' || cardYear === yearFilter;
+          
+          if (matchCategory && matchYear) {
+            card.style.display = 'block';
+            card.classList.add('fade-in');
+          } else {
+            card.style.display = 'none';
+            card.classList.remove('fade-in');
+          }
+        });
+        
+        // Show/hide category sections
+        sections.forEach(section => {
+          const sectionCategory = section.dataset.category;
+          const visibleCards = section.querySelectorAll('.glass-card:not([style*="display: none"])');
+          
+          if (categoryFilter === 'all') {
+            section.style.display = visibleCards.length > 0 ? 'block' : 'none';
+          } else {
+            section.style.display = sectionCategory === categoryFilter ? 'block' : 'none';
+          }
+        });
+      }
+      
+      // Tab click handler
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          tabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          filterContent();
+        });
+      });
+      
+      // Year select handler
+      if (yearSelect) {
+        yearSelect.addEventListener('change', filterContent);
+      }
+    });
+    </script>
+
+{{ partial "foot.html" . }}

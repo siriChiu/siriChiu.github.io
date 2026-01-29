@@ -6,20 +6,19 @@
   {{ .Scratch.Set "thumbnailImage" .Params.thumbnailImage }}
 {{ end }}
 
-{{/* Get position if specified */}}
-{{ if .Params.thumbnailImagePosition }}
-  {{ .Scratch.Set "thumbnailImagePosition" .Params.thumbnailImagePosition }}
-{{ end }}
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  
+  {{/* Image Section - Always on top for card layout */}}
+  {{ if .Scratch.Get "thumbnailImage" }}
+    <a href="{{ .Permalink }}" aria-label="Open post: {{ .Title }}">
+      <div class="postShorten-thumbnailimg">
+        <img alt="{{ .Title }}" src="{{ .Scratch.Get "thumbnailImage" }}"/>
+      </div>
+    </a>
+  {{ end }}
 
-<article class="postShorten postShorten--thumbnailimg-{{ .Scratch.Get "thumbnailImagePosition" }}">
+  {{/* Content Section */}}
   <div class="postShorten-wrap">
-    {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "top")}}
-      <a href="{{ .Permalink }}" aria-label="Open post: {{ .Title }}">
-        <div class="postShorten-thumbnailimg">
-          <img alt="{{ .Title }}" src="{{ .Scratch.Get "thumbnailImage" }}"/>
-        </div>
-      </a>
-    {{ end }}
     <div class="postShorten-header">
       <h1 class="postShorten-title">
         <a class="link-unstyled" href="{{ .Permalink }}" aria-label="Open post: {{ .Title }}">
@@ -34,16 +33,8 @@
       {{ else }}
         {{ .Summary }}
       {{ end }}
-      <p>
-        <a href="{{ .Permalink }}" class="postShorten-excerpt_link link" aria-label="Read more about {{ .Title }}">{{ i18n "post.read_more" }}</a>
-      </p>
     </div>
+    {{/* Optional: Read More Link */}}
+    <a href="{{ .Permalink }}" class="postShorten-excerpt_link link" aria-label="Read more about {{ .Title }}">{{ i18n "post.read_more" }}</a>
   </div>
-  {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
-    <a href="{{ .Permalink }}" aria-label="Open post: {{ .Title }}">
-      <div class="postShorten-thumbnailimg">
-        <img alt="{{ .Title }}" src="{{ .Scratch.Get "thumbnailImage" }}"/>
-      </div>
-    </a>
-  {{ end }}
 </article>

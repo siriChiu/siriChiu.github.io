@@ -66,3 +66,6 @@ tags:
 ### 總結 (Conclusion)
 
 這個專案展示了如何利用 **Low-Code 工具 (n8n)** 與 **Local LLM** 技術，快速構建具備商業價值的自動化系統。它不僅解決了資訊時效性的問題，更證明了在低成本硬體上運行複雜 AI 工作流的可行性。
+
+
+<iframe src="https://lightnews.tw/" width="100%" height="500px" style="border:none;"></iframe>
