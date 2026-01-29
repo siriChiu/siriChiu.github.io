@@ -130,6 +130,12 @@ canonifyurls = true
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
   # url = "/about/"
   url = "/#about"
+[[menu.main]]
+  weight = 6
+  identifier = "履歷 resume"
+  name = "履歷 Resume"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-file-alt\"></i>"
+  url = "/#resume"
 
 [[menu.links]]
   weight = 1
@@ -255,11 +261,15 @@ canonifyurls = true
      href = "css/_about.css"
    [[params.customCSS]]
      href = "css/modern-layout.css"
+   [[params.customCSS]]
+     href = "css/resume.css"
 
   # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
   # they have to be referred from static root. Example
   #  [[params.customJS]]
   #     src = "js/myscript.js"
+  [[params.customJS]]
+    src = "js/resume.js"
   [[params.customJS]]
     src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"
     integrity = "sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw=="
